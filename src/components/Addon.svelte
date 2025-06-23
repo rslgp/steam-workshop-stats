@@ -28,11 +28,10 @@
 	<div class="card-body">
 		<div class="rating justify-center mb-4">
 			{#each { length: 5 } as _, i}
-				{#if i < stars}
-					<div class="mask mask-star bg-lime-400 mx-1"></div>
-				{:else}
-					<div class="mask mask-star bg-primary-content mx-1" aria-current="true"></div>
-				{/if}
+				<div
+					class="mask mask-star mx-1 bg-lime-400"
+					aria-current={i === stars - 1 ? "true" : undefined}
+				></div>
 			{/each}
 		</div>
 		<p class="card-title text-xl">{title}</p>
